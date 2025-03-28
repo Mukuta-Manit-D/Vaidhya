@@ -19,14 +19,12 @@
   <a><img src="https://custom-icon-badges.demolab.com/badge/HKUNLP Instructor L-FFFFFF?style=for-the-badge&logo=hkunlp"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/Transformer-gold?style=for-the-badge&logo=package&logoColor=black"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/Langchain-FBEEE9?style=for-the-badge&logo=ln"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/Chroma DB-999999?style=for-the-badge&logo=chroma-logo"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/Samantara-FFFFFF?style=for-the-badge&logo=sam"></a> &nbsp;
   <a><img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white"></a> &nbsp;
-  <a><img src="https://custom-icon-badges.demolab.com/badge/Innosetup-FAEBD7?style=for-the-badge&logo=innosetup"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/Random Forest-99EDC3?style=for-the-badge&logo=randforest"></a> &nbsp;
   <a><img src="https://custom-icon-badges.demolab.com/badge/SMTP MIME-FBEC5D?style=for-the-badge&logo=server-smtp"></a> &nbsp;
   <a><img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white"></a> &nbsp;
-  <a><img src="https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white"></a> &nbsp;
+  
 </div>
 
 ------------------------
@@ -43,7 +41,7 @@ The Project Focuss on 6 Mental Abnormalities, namely:
   
 ------------------------
 
-## Requirments
+## Requirements
 Python
 
 <a href="https://www.python.org/downloads/release/python-3913/" alt="python">
