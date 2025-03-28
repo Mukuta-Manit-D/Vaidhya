@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/patientinfo.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('index')}}"><button data-translate>Home</button></a>
+    </div>
+
+    <div class="mid-box">
+        <div class="wrapper">
+            <form method="POST" action="/savedetails" onsubmit="return savedetails();">
+                <h2 data-translate>Enter Details</h2>
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="name">
+                    <span style="font-weight: 700px;" data-translate>Full Name</span>
+                </div>
+
+
+                <div class="input-box">
+                    <input type="date" placeholder="DOB" autocomplete="new-password" id="DOB" data-translate>
+                    <span data-translate>DOB</span>
+                </div>
+
+                <div class="input-bg">
+                    <label for="blood-group" style="display: none;" data-translate>Blood Group</label>
+                    <select id="blood-group" class="dropbtn">
+                        <option value="" disabled selected data-translate>Blood Group</option>
+                        <option value="A+">A +</option>
+                        <option value="A+">A -</option>
+                        <option value="B+">B +</option>
+                        <option value="B-">B -</option>
+                        <option value="AB+">AB +</option>
+                        <option value="AB-">AB -</option>
+                        <option value="O+">O +</option>
+                        <option value="O-">O -</option>
+                    </select>
+                    <div class="dropdown-content">
+                        <a href="#">A+</a>
+                        <a href="#">O+</a>
+                        <a href="#">AB+</a>
+                        <a href="#">AB-</a>
+                        <a href="#">A-</a>
+                        <a href="#">O-</a>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="address">
+                    <span style="font-weight: 700px;" data-translate>Home Address</span>
+                </div>
+
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="contact-number" id="contact-number">
+                    <span style="font-weight: 700px;" data-translate>Contact Number</span>
+                </div>
+
+                <button type="submit" class="btn" data-translate>Save Details</button><br>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/patientinfo.js') }}"></script>
+
+</body>
+
+</html>

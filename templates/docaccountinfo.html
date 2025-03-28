@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/docaccountinfo.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('doctordashboard')}}"><button data-translate>Dashboard</button></a>
+    </div>
+
+    <div class="mid-box">
+        <form method="POST" action="/docsavedetails" onsubmit="return docsavedetails();">
+            <div class="wrapper">
+                <h2 data-translate>Enter Details</h2>
+                <div class="input-box">
+                    {% if doctor_name %}
+                    <input type="text" required="required" autocomplete="new-password" id="name" value="{{doctor_name}}">
+                    <span style="font-weight: 700px;" data-translate>Full Name</span>
+                    {% endif %}
+                </div>
+
+                {% if blood_group %}
+                <input type="hidden" id="blood-group-value" value="{{ blood_group }}">
+                {% endif %}
+
+                <div class="input-box">
+                    {% if DOB %}
+                    <input type="date" placeholder="DOB" autocomplete="new-password" id="DOB" value="{{DOB}}">
+                    <span data-translate>DOB</span>
+                    {% endif %}
+                </div>
+
+                <div class="input-bg">
+                    <label for="blood-group" style="display: none;" data-translate>Blood Group</label>
+                    <select id="blood-group" class="dropbtn">
+                        <option value="" disabled selected data-translate>Blood Group</option>
+                        <option value="A+">A +</option>
+                        <option value="A-">A -</option>
+                        <option value="B+">B +</option>
+                        <option value="B-">B -</option>
+                        <option value="AB+">AB +</option>
+                        <option value="AB-">AB -</option>
+                        <option value="O+">O +</option>
+                        <option value="O-">O -</option>
+                    </select>
+                    <div class="dropdown-content">
+                        <a href="#">A +</a>
+                        <a href="#">A -</a>
+                        <a href="#">B +</a>
+                        <a href="#">B -</a>
+                        <a href="#">AB +</a>
+                        <a href="#">AB -</a>
+                        <a href="#">O +</a>
+                        <a href="#">O -</a>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    {% if address %}
+                    <input type="text" required="required" autocomplete="new-password" id="address" value="{{address}}">
+                    <span style="font-weight: 700px;" data-translate>Home Address</span>
+                    {% endif %}
+                </div>
+
+
+                <div class="input-box">
+                    {% if ph_number %}
+                    <input type="text" required="required" autocomplete="new-password" id="contact-number"
+                        id="contact-number" value="{{ph_number}}">
+                    <span style="font-weight: 700px;" data-translate>Contact Number</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="wrapperr">
+                <div class="input-box">
+                    {% if licence_number %}
+                    <input type="text" required="required" autocomplete="new-password" id="licencenumber" value="{{licence_number}}">
+                    <span style="font-weight: 700px;" data-translate>Licence Number</span>
+                    {% endif %}
+                </div>
+
+                <div class="input-box">
+                    {% if aadhar %}
+                    <input type="number" required="required" autocomplete="new-password" id="aadhar" value="{{aadhar}}">
+                    <span style="font-weight: 700px;" data-translate>Aadhar Number</span>
+                    {% endif %}
+                </div>
+
+                <div class="input-box">
+                    {% if consultation_address %}
+                    <input type="text" required="required" autocomplete="new-password" id="consultancyaddress" value="{{consultation_address}}">
+                    <span style="font-weight: 700px;" data-translate>Consultancy Address</span>
+                    {% endif %}
+                </div>
+
+                <div class="input-box">
+                    {% if room %}
+                    <input type="text" required="required" autocomplete="new-password" id="consultancyroomnumber" value="{{room}}">
+                    <span style="font-weight: 700px;" data-translate>Consultency Room Number</span>
+                    {% endif %}
+                </div>
+
+                <div class="input-box">
+                    {% if location %}
+                    <input type="text" required="required" autocomplete="new-password" id="consultancylocation" value="{{location}}">
+                    <span style="font-weight: 700px;" data-translate>Consultency Location</span>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn" data-translate>Save Details</button><br>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/docaccountinfo.js') }}"></script>
+
+</body>
+
+</html>

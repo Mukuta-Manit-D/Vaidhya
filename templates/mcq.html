@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ವೈDHया</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mcq.css') }}">
+  <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo-name">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+      <h1 class="heading-nav">ವೈDHया</h1>
+    </div>
+    <a href="{{url_for('dashboard')}}"><button class="dash-button" data-translate>Dashboard</button></a>
+  </div>
+
+  <h2 class="heading" data-translate>What do you think about the following situations?  Choose the option that best reflects your feelings and tendencies:</h2>
+
+
+  <form method="POST" action="/mcqfun1" onsubmit="return mcqfun1();">
+    <!-- Question 1 -->
+
+    <div class="hor-question-box">
+      <div class="question-box" id="qa1">
+        <p data-translate>Your friend has invited you to a party. Consider how you might respond in the given scenario.
+        </p>
+        <br>
+        <input type="radio" name="q1" value="a" required>
+        <label for="qa1" data-translate> I would feel too exhausted and unmotivated to attend. Socializing feels overwhelming right now.</label><br><br>
+        <input type="radio" name="q1" value="b">
+        <label for="qa1" data-translate> I would worry excessively about what others think of me and might hesitate to go, fearing judgment or social scrutiny.</label><br><br>
+        <input type="radio" name="q1" value="c">
+        <label for="qa1" data-translate> I might attend, but my thoughts may be scattered, and I might have difficulty focusing on conversations or enjoying the event.</label><br><br>
+        <input type="radio" name="q1" value="d">
+        <label for="qa1" data-translate> I would go to the party with high energy and enthusiasm, but my mood might shift unexpectedly throughout the event.</label><br><br>
+        <input type="radio" name="q1" value="e">
+        <label for="qa1" data-translate> I would attend the party but might struggle with intrusive thoughts or rituals related to social interactions. </label><br><br>
+        <input type="radio" name="q1" value="f">
+        <label for="qa1" data-translate> The idea of attending a party triggers memories of a traumatic event, making it challenging for me to consider going.</label><br><br>
+        <input type="radio" name="q1" value="g">
+        <label for="qa1" data-translate> None. I would attend the party without any specific challenges. Socializing is generally comfortable for me at the moment.</label>
+      </div>
+
+      <div class="question-box">
+        <p data-translate>You have an upcoming deadline at work, How do you typically handle the stress?</p>
+        <br>
+        <input type="radio" name="q2" value="a" required>
+        <label for="qa2" data-translate> I feel overwhelmed and struggle to focus on tasks. </label><br><br>
+        <input type="radio" name="q2" value="b">
+        <label for="qa2" data-translate> I become anxious and worry excessively about meeting expectations. </label><br><br>
+        <input type="radio" name="q2" value="c">
+        <label for="qa2" data-translate> I may experience racing thoughts and have difficulty organizing my work.</label><br><br>
+        <input type="radio" name="q2" value="d">
+        <label for="qa2" data-translate> I might find it challenging to concentrate due to scattered thoughts. </label><br><br>
+        <input type="radio" name="q2" value="e">
+        <label for="qa2" data-translate> I engage in repetitive behaviors or thoughts to alleviate stress. </label><br><br>
+        <input type="radio" name="q2" value="f">
+        <label for="qa2" data-translate> I may experience flashbacks or heightened anxiety related to past traumatic experiences. </label><br><br>
+        <input type="radio" name="q2" value="g">
+        <label for="qa2" data-translate> None. I manage work-related stress without significant challenges. </label>
+      </div>
+
+    </div>
+
+    <div class="hor-question-box">
+
+      <div class="question-box">
+        <p data-translate>You receive unexpected praise for your achievements, How do you react?</p>
+        <br>
+        <input type="radio" name="q3" value="a" required>
+        <label for="qa3" data-translate> I struggle to accept compliments and may feel that I don't deserve the praise. </label><br><br>
+        <input type="radio" name="q3" value="b">
+        <label for="qa3" data-translate> I become anxious and worry about living up to the expectations set by the praise. </label><br><br>
+        <input type="radio" name="q3" value="c">
+        <label for="qa3" data-translate> I experience elevated mood and heightened self-esteem.</label><br><br>
+        <input type="radio" name="q3" value="d">
+        <label for="qa3" data-translate> I may interpret the praise in a way that feels unusual or unrelated. </label><br><br>
+        <input type="radio" name="q3" value="e">
+        <label for="qa3" data-translate> I may feel the need to repeat certain actions to ensure continued success. </label><br><br>
+        <input type="radio" name="q3" value="f">
+        <label for="qa3" data-translate> I may experience heightened anxiety or flashbacks related to past trauma. </label><br><br>
+        <input type="radio" name="q3" value="g">
+        <label for="qa3" data-translate> None. I accept praise and recognition without significant challenges. </label>
+      </div>
+
+      <div class="question-box">
+        <p data-translate>You witness a car accident on the street, How does it affect you?
+        </p>
+        <br>
+        <input type="radio" name="q4" value="a" required data-translate>
+        <label for="qa4" data-translate> I feel a deep sense of sadness and empathy for those involved. </label><br><br>
+        <input type="radio" name="q4" value="b" data-translate>
+        <label for="qa4" data-translate> I become anxious, and the noise may trigger feelings of discomfort or panic. </label><br><br>
+        <input type="radio" name="q4" value="c" data-translate>
+        <label for="qa4" data-translate> I might have difficulty processing the event and understanding its impact. </label><br><br>
+        <input type="radio" name="q4" value="d" data-translate>
+        <label for="qa4" data-translate> I may experience mood swings or heightened emotional reactions. </label><br><br>
+        <input type="radio" name="q4" value="e" data-translate>
+        <label for="qa4" data-translate> I feel compelled to engage in rituals to alleviate anxiety related to the accident. </label><br><br>
+        <input type="radio" name="q4" value="f" data-translate>
+        <label for="qa4" data-translate> I may experience flashbacks or intense anxiety related to past traumatic experiences. </label><br><br>
+        <input type="radio" name="q4" value="g" data-translate>
+        <label for="qa4" data-translate> None. I navigate such events without significant emotional distress. </label>
+      </div>
+
+    </div>
+
+    <div class="hor-question-box">
+      <div class="question-box">
+        <p data-translate>You are preparing for a social event with friends, How do you approach it?
+        </p>
+        <br>
+        <input type="radio" name="q5" value="a" required>
+        <label for="qa5" data-translate> I may feel a lack of interest and energy, making socializing challenging. </label><br><br>
+        <input type="radio" name="q5" value="b">
+        <label for="qa5" data-translate> I become anxious and worry about how others perceive me in social situations. </label><br><br>
+        <input type="radio" name="q5" value="c">
+        <label for="qa5" data-translate> I may struggle with scattered thoughts and difficulty engaging in conversations. </label><br><br>
+        <input type="radio" name="q5" value="d">
+        <label for="qa5" data-translate> I approach it with high energy and enthusiasm but may experience mood shifts. </label><br><br>
+        <input type="radio" name="q5" value="e">
+        <label for="qa5" data-translate> I may engage in repetitive behaviors or thoughts related to social interactions. </label><br><br>
+        <input type="radio" name="q5" value="f">
+        <label for="qa5" data-translate> I may experience heightened anxiety or avoid the event due to past traumatic social experiences. </label><br><br>
+        <input type="radio" name="q5" value="g">
+        <label for="qa5" data-translate> None. I approach social events without significant challenges. </label>
+      </div>
+
+
+
+      <div class="question-box">
+        <p data-translate>You find yourself in a crowded and noisy environment then How do you react?
+        </p>
+        <br>
+        <input type="radio" name="q6" value="a" required>
+        <label for="qa6" data-translate> I feel overwhelmed and may withdraw from the environment. </label><br><br>
+        <input type="radio" name="q6" value="b">
+        <label for="qa6" data-translate> I become anxious, and the noise may trigger feelings of discomfort or panic. </label><br><br>
+        <input type="radio" name="q6" value="c">
+        <label for="qa6" data-translate> I might have difficulty processing the sensory input, leading to scattered thoughts. </label><br><br>
+        <input type="radio" name="q6" value="d">
+        <label for="qa6" data-translate> I may experience heightened energy or mood shifts in response to the environment. </label><br><br>
+        <input type="radio" name="q6" value="e">
+        <label for="qa6" data-translate> I engage in repetitive behaviors or rituals to cope with the overwhelming stimuli. </label><br><br>
+        <input type="radio" name="q6" value="f">
+        <label for="qa6" data-translate> I may feel on edge or hypervigilant due to past traumatic experiences. </label><br><br>
+        <input type="radio" name="q6" value="g">
+        <label for="qa6" data-translate> None. I navigate crowded environments without significant challenges. </label>
+      </div>
+
+    </div>
+
+    <div class="hor-question-box">
+      <div class="question-box">
+        <p data-translate>You encounter a trigger related to a past traumatic event then How do you cope?
+        </p>
+        <br>
+        <input type="radio" name="q7" value="a" required>
+        <label for="qa7" data-translate> I may experience a surge of emotions and find it challenging to move past the trigger. </label><br><br>
+        <input type="radio" name="q7" value="b">
+        <label for="qa7" data-translate> I become anxious, and the trigger may lead to intrusive thoughts or flashbacks. </label><br><br>
+        <input type="radio" name="q7" value="c">
+        <label for="qa7" data-translate> I might struggle with processing the trigger, leading to scattered thoughts. </label><br><br>
+        <input type="radio" name="q7" value="d">
+        <label for="qa7" data-translate> I may experience mood swings or heightened emotional reactions in response to the trigger. </label><br><br>
+        <input type="radio" name="q7" value="e">
+        <label for="qa7" data-translate> I engage in repetitive behaviors or rituals to alleviate anxiety related to the trigger. </label><br><br>
+        <input type="radio" name="q7" value="f">
+        <label for="qa7" data-translate> I may experience intense anxiety, flashbacks, or avoidance behaviors related to the trigger. </label><br><br>
+        <input type="radio" name="q7" value="g">
+        <label for="qa7" data-translate> None. I navigate triggers without significant emotional distress. </label>
+      </div>
+
+
+
+      <div class="question-box">
+        <p data-translate>You are faced with a decision that requires careful consideration then How do you approach it?
+        </p>
+        <br>
+        <input type="radio" name="q8" value="a" required>
+        <label for="qa8" data-translate> I may feel indecisive and struggle tomake decisions due to a lack of interest. </label><br><br>
+        <input type="radio" name="q8" value="b">
+        <label for="qa8" data-translate> I become anxious, and the decision-making process may lead to excessive worry. </label><br><br>
+        <input type="radio" name="q8" value="c">
+        <label for="qa8" data-translate> I might have difficulty organizing thoughts, leading to challenges in making a decision. </label><br><br>
+        <input type="radio" name="q8" value="d">
+        <label for="qa8" data-translate> I may experience mood swings or impulsive decision-making. </label><br><br>
+        <input type="radio" name="q8" value="e">
+        <label for="qa8" data-translate> I engage in repetitive thoughts or rituals related to the decision. </label><br><br>
+        <input type="radio" name="q8" value="f">
+        <label for="qa8" data-translate> I may have difficulty making decisions due to past traumatic experiences impacting my judgment. </label><br><br>
+        <input type="radio" name="q8" value="g">
+        <label for="qa8" data-translate> None. I make decisions without significant challenges. </label>
+      </div>
+
+    </div>
+
+    <div class="hor-question-box">
+      <div class="question-box">
+        <p data-translate>You are experiencing a period of heightened creativity and productivity then How does it impact you?
+        </p>
+        <br>
+        <input type="radio" name="q9" value="a" required>
+        <label for="qa9" data-translate> I feel a temporary lift in mood but may struggle to sustain interest or motivation. </label><br><br>
+        <input type="radio" name="q9" value="b">
+        <label for="qa9" data-translate> I may feel anxious about maintaining the high level of productivity. </label><br><br>
+        <input type="radio" name="q9" value="c">
+        <label for="qa9" data-translate> I experience a burst of creative energy and heightened self-esteem. </label><br><br>
+        <input type="radio" name="q9" value="d">
+        <label for="qa9" data-translate> I might have scattered thoughts and difficulty focusing during this period. </label><br><br>
+        <input type="radio" name="q9" value="e">
+        <label for="qa9" data-translate> I may engage in repetitive behaviors or rituals associated with my creative process. </label><br><br>
+        <input type="radio" name="q9" value="f">
+        <label for="qa9" data-translate> I may have difficulty managing the increased energy and creativity due to past traumatic experiences. </label><br><br>
+        <input type="radio" name="q9" value="g">
+        <label for="qa9" data-translate> None. I experience heightened creativity without significant challenges. </label>
+      </div>
+
+
+      <div class="question-box">
+        <p data-translate>You are in a situation where you feel judged by others then How do you react?
+        </p>
+        <br>
+        <input type="radio" name="q10" value="a" required>
+        <label for="qa10" data-translate> I internalize the judgment and may feel a sense of worthlessness. </label><br><br>
+        <input type="radio" name="q10" value="b">
+        <label for="qa10" data-translate> I become anxious and may avoid future situations where judgment is perceived. </label><br><br>
+        <input type="radio" name="q10" value="c">
+        <label for="qa10" data-translate> I might struggle to understand the intentions behind the perceived judgment. </label><br><br>
+        <input type="radio" name="q10" value="d">
+        <label for="qa10" data-translate> I may experience mood swings and heightened emotional reactions to perceived judgment. </label><br><br>
+        <input type="radio" name="q10" value="e">
+        <label for="qa10" data-translate> I engage in repetitive behaviors or thoughts to cope with the perceived judgment. </label><br><br>
+        <input type="radio" name="q10" value="f">
+        <label for="qa10" data-translate> I may experience intense anxiety, hypervigilance, or avoidance behaviors due to past traumatic social experiences. </label><br><br>
+        <input type="radio" name="q10" value="g">
+        <label for="qa10" data-translate> None. I navigate situations of perceived judgment without significant emotional distress. </label>
+      </div>
+
+    </div>
+
+    <div class="subbutton">
+      <button type="submit" class="submit-button" data-translate>Submit</button>
+    </div>
+
+  </form>
+
+  <script src="{{ url_for('static', filename='js/mcq.js') }}"></script>
+</body>
+
+</html>

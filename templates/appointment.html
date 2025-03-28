@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/appointment.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('dashboard')}}"><button class="dash" data-translate>Dashboard</button></a>
+    </div>
+
+    <div class="names-heading">
+        <h2 data-translate>Book an Appointment Here:</h2>
+        {% if doctor_name %}
+        <h3 data-translate>Dr. {{ doctor_name }}</h3>
+        {% else %}
+        <h3 data-translate>Doctor Not Assigned</h3>
+        {% endif %}
+    </div>
+
+    <div>
+        {% if dates_with_availability %}
+        <div class="tab">
+            {% for date, slots_availability in dates_with_availability %}
+            <button class="tablinks" onclick="opentime(event, '{{ date }}')">{{ date }}</button>
+            {% endfor %}
+        </div>
+
+        {% for date, slots_availability in dates_with_availability %}
+        <div id="{{ date }}" class="tabcontent">
+            <h3 data-translate>Appointment Form for {{ date }}</h3>
+            <div class="login-box">
+                <form method="POST" action="/appointment/submitted" onsubmit="return appointment_get('{{ date }}');">
+                    <div class="full-form">
+                        <div>
+                            <div class="input-box">
+                                <input type="text" id="name_{{ date }}" name="name" autocomplete="off" required data-debug="name">
+                                <label for="name_{{ date }}" data-translate>Name</label>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" id="pid_{{ date }}" name="pid" autocomplete="off" required data-debug="pid">
+                                <label for="pid_{{ date }}" data-translate>Username</label>
+                            </div>
+                        </div>
+
+                        <div class="radio-time">
+                            <h4>Time Slot</h4>
+                            {% for slot, status in slots_availability.items() %}
+                            <div>
+                                {% if status == 0 %}
+                                <input type="radio" id="{{ date }}_{{ slot }}" name="timeSlot" value="{{ slot }}" required data-debug="timeSlot">
+                                <label for="{{ date }}_{{ slot }}" data-translate>{{ slot }}</label><br>
+                                {% else %}
+                                <input type="radio" id="{{ date }}_{{ slot }}" name="timeSlot" value="{{ slot }}" disabled>
+                                <label for="{{ date }}_{{ slot }}" data-translate>{{ slot }} (Booked)</label><br>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="radio-time">
+                            <h4>Mode</h4>
+                            <div>
+                                <input type="radio" id="online_{{ date }}" name="mode" value="online" required data-debug="mode">
+                                <label for="online_{{ date }}" data-translate>Online</label><br>
+                                <input type="radio" id="offline_{{ date }}" name="mode" value="offline" data-debug="mode">
+                                <label for="offline_{{ date }}" data-translate>Offline</label><br>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="dates" value="{{ date }}" data-debug="dates">
+
+                    </div>
+                    <div class="flex_justy_between">
+                        <button type="submit" class="submit-button" data-translate>Save Details</button>
+                    </div>
+                </form>
+                <div id="error-message" style="color: red; display: none;" data-debug="error-message">
+                    <!-- Placeholder for error messages -->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No available time slots at the moment. Please check back later.</p>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/appointment.js') }}"></script>
+
+</body>
+
+</html>

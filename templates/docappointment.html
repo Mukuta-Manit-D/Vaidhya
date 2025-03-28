@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/docappointment.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('doctordashboard')}}"><button class="bttn" data-translate>Dashboard</button></a>
+    </div>
+
+    <form method="POST" action="/docappointment/submitted" onsubmit="return docappointment_get();">
+        <div class="mdiv">
+            <div>
+                <div>
+                    <h3 data-translate>Choose Date</h3>
+                </div>
+                <div class="date-input-container">
+                    <input type="date" id="calendarDate" name="calendarDate" placeholder="Choose date" required />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h3 data-translate>Choose Time Slots</h3>
+                </div>
+                <div class="checkbox-input-container">
+                    <div>
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">09:00 - 12:00 IST</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2">13:00 - 16:00 IST</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkbox3">
+                        <label for="checkbox3">17:00 - 20:00 IST</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h3 data-translate>Choose Custom Time Slot (optional)</h3>
+                </div>
+                <div class="time-input-container">
+                    <div>
+                        <label for="timea" data-translate>From:</label>
+                        <input type="time" id="timea" name="timea" min="07:00" max="20:00" />
+                    </div>
+                    <div>
+                        <label for="timeb" data-translate>Till:</label>
+                        <input type="time" id="timeb" name="timeb" min="07:00" max="20:00" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="button-container">
+                    <button type="submit" class="submit" data-translate>Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/docappointment.js') }}"></script>
+</body>
+
+</html>

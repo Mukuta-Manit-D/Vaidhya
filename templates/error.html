@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+    </div>
+
+    <div class="names-heading">
+        <video autoplay muted loop>
+            <source src="{{ url_for('static', filename='videos/error404.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="second">
+        <h3 data-translate>The Page you are looking for dosn't currently exist or doesn't have a direct access.</h3>
+        <h3 data-translate>Try Visiting the Main site or kindly contact <span> vaidhya.co@gmail.com </span> for Further Instruction.</h3>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/error.js') }}"></script>
+</body>
+
+</html>

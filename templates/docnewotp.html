@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=divice-width,intial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/docnewotp.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+    </div>
+
+    <div class="mid-box">
+        <div class="wrapper">
+            <form method="POST" action="/docnewotpverified" onsubmit="return docnewotp();">
+
+                <div class="text-name">
+                    <h2 data-translate>OTP</h2>
+                </div>
+                <br>
+                <div>
+                    <h4 data-translate>Enter OTP</h4>
+                </div>
+                <div class="input-box">
+                    <input type="number" id="input1" maxlength="1" name="input1"
+                        oninput="handleInput(this, document.getElementById('input2'))">
+                    <input type="number" id="input2" maxlength="1" name="input2"
+                        oninput="handleInput(this, document.getElementById('input3'))">
+                    <input type="number" id="input3" maxlength="1" name="input3"
+                        oninput="handleInput(this, document.getElementById('input4'))">
+                    <input type="number" id="input4" maxlength="1" name="input4"
+                        oninput="handleInput(this, document.getElementById('input5'))">
+                    <input type="number" id="input5" maxlength="1" name="input5"
+                        oninput="handleInput(this, document.getElementById('input6'))">
+                    <input type="number" id="input6" maxlength="1" name="input6"
+                        oninput="handleInput(this, document.getElementById('input7'))">
+                </div>
+                <br>
+                <br>
+                <button type="button" class="btn" id="resendBtn" onclick="reloadWindow()" data-translate>Resend</button>
+                <button type="submit" class="btn" data-translate>Verify</button><br>
+                
+                {% if message %}
+                <h4 class="h4warning" data-translate>{{message}}</h4>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/docnewotp.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=divice-width,intial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="top-buttons">
+        <a href="{{ url_for('about') }}"><button id="myButton" data-translate>ABOUT US</button></a>
+        <select id="language-select" class="nav-link" name="languages">
+            <option value="en">English</option>
+            <option value="as">Assamese</option>
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+            <option value="gu">Gujrati</option>
+            <option value="kn">Kannada</option>
+            <option value="ml">Malayalam</option>
+            <option value="mr">Marathi</option>
+            <option value="or">Odia</option>
+            <option value="pa">Punjabi</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+        </select>
+        <a href="{{ url_for('doctorLogin') }}"><button id="myButton" data-translate>Doctor Login</button></a>
+    </div>
+
+    <div class="mid-box">
+        <div class="wrapper">
+            <form method="POST" action="/loginsuccessfull" onsubmit="return login_fun();">
+
+                <div class="logo-name">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+                    <h1>ವೈDHया </h1>
+                </div>
+
+                <br>
+                <div class="input-box">
+                    <input type="text" required="required" id="login-username" name="username">
+                    <span style="font-weight: 700px;" data-translate>Username</span>
+                </div>
+                <div class="input-box">
+                    <input type="password" required="required" id="login-password" name="password">
+                    <span style="font-weight: 700px;" data-translate>Password</span>
+                </div>
+                {% if message %}
+                <h5 class="h4warning" data-translate>{{message}}</h5>
+                {% endif %}
+                <br>
+                <div class="remember-forgot">
+                    <div>
+                        <a href="{{url_for('newusername')}}" data-translate>Create Account</a>
+                    </div>
+                    <div>
+                        <a href="{{url_for('forgotpassword')}}" data-translate>Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn" data-translate>Login</button><br>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+
+</html>

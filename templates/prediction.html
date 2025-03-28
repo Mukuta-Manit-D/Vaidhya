@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+  <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+  <title>ವೈDHया</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo-name">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+      <h1 class="heading">ವೈDHया</h1>
+  </div>
+    <a href="{{url_for('dashboard')}}"><button data-translate>Dashboard</button></a>
+  </div>
+  </div>
+  <h1 class="heading-1" data-translate>Welcome to Your Wellness Hub Let's Talk About How You're Feeling
+    Today</h1>
+  <p class="description" data-translate>Your mental health companion - a supportive chatbot offering understanding and
+    guidance. Engage in meaningful conversations to enhance well-being and navigate your journey towards mental wellness
+    with care.</p>
+
+  <div class="main_div">
+    <div class="left-section">
+      <div class="container">
+        <form method="POST" action="/userfeeling" onsubmit="return prediction_fun();">
+          <div class="form-group">
+            <input type="text" id="feeling" name="feeling" data-translate placeholder="How are you doing today?" >
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-button" data-translate>Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="right-section">
+      <div class="container">
+
+        <div class="form-group">
+          <div type="text" id="textBox" name="textBox" class="output-box">
+            {% if not symptom  %}
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-out">
+            {% elif symptom == "Error 429!" %}
+            <p style="color: rgb(0, 0, 0); font-size: 30px;" data-translate>Error 429!</p>
+            {% else %}
+            <p style="color: rgb(0, 0, 0); font-size: 30px;" data-translate>{{ symptom }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/prediction.js') }}"></script>
+</body>
+
+</html>

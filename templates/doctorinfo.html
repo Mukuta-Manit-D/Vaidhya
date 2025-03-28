@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/doctorinfo.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('index')}}"><button data-translate>Home</button></a>
+    </div>
+
+    <div class="mid-box">
+        <form method="POST" action="/docsavedetails" onsubmit="return docsavedetails();">
+            <div class="wrapper">
+                <h2 data-translate>Enter Details</h2>
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="name">
+                    <span style="font-weight: 700px;" data-translate>Full Name</span>
+                </div>
+
+
+                <div class="input-box">
+                    <input type="date" placeholder="DOB" autocomplete="new-password" id="DOB">
+                    <span data-translate>DOB</span>
+                </div>
+
+                <div class="input-bg">
+                    <label for="blood-group" style="display: none;" data-translate>Blood Group</label>
+                    <select id="blood-group" class="dropbtn">
+                        <option value="" disabled selected data-translate>Blood Group</option>
+                        <option value="A+">A +</option>
+                        <option value="A-">A -</option>
+                        <option value="B+">B +</option>
+                        <option value="B-">B -</option>
+                        <option value="AB+">AB +</option>
+                        <option value="AB-">AB -</option>
+                        <option value="O+">O +</option>
+                        <option value="O-">O -</option>
+                    </select>
+                    <div class="dropdown-content">
+                        <a href="#">A+</a>
+                        <a href="#">O+</a>
+                        <a href="#">AB+</a>
+                        <a href="#">AB-</a>
+                        <a href="#">A-</a>
+                        <a href="#">O-</a>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="address">
+                    <span style="font-weight: 700px;" data-translate>Home Address</span>
+                </div>
+
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="contact-number"
+                        id="contact-number">
+                    <span style="font-weight: 700px;" data-translate>Contact Number</span>
+                </div>
+            </div>
+            <div class="wrapperr">
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="licencenumber">
+                    <span style="font-weight: 700px;" data-translate>Licence Number</span>
+                </div>
+
+                <div class="input-box">
+                    <input type="number" required="required" autocomplete="new-password" id="aadhar">
+                    <span style="font-weight: 700px;" data-translate>Aadhar Number</span>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="consultancyaddress">
+                    <span style="font-weight: 700px;" data-translate>Consultancy Address</span>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="consultancyroomnumber">
+                    <span style="font-weight: 700px;" data-translate>Consultency Room Number</span>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required="required" autocomplete="new-password" id="consultancylocation">
+                    <span style="font-weight: 700px;" data-translate>Consultency Location</span>
+                </div>
+
+                <button type="submit" class="btn" data-translate>Save Details</button><br>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/doctorinfo.js') }}"></script>
+
+</body>
+
+</html>

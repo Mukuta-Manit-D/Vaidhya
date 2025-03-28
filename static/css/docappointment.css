@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+body {
+    background-color: #FDF4F5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #DFCCFB;
+    padding-inline: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #DFCCFB;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .logo-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo-img {
+    height: 40px;
+}
+
+.navbar .heading {
+    font-size: 24px;
+}
+
+.heading{
+  color: #874CCC;
+}
+
+.heading-1{
+  margin: 2%;
+  color: #FF90BC;
+}
+
+.bttn {
+    background-color: white;
+    color: #B983FF;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bttn:hover { 
+  font-weight: 900;  
+} 
+
+.main_div {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.logo-img{
+    height: 40px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 90.88px);
+}
+
+.mdiv{
+    width: 90%;
+    max-width: 800px;
+    background-color: #DFCCFB;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    padding: 20px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid #874CCC;
+}
+
+.date-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-input-container input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+#calendarDate{
+    width: 50%;
+    color: #745C97;
+}
+
+.checkbox-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-input-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit{
+    background-color: white;
+    color: #560764;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    width: 50%;
+    margin-top: 20px;
+
+}
+
+.submit:hover{
+    font-weight: 900;
+}
+
+h3{
+    margin-inline: 30px;
+    margin-top: 20px;
+    color: #560764;
+}
+
+label{
+    color: #554994;
+}
+
+#timea{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin-left: 10px;
+}
+
+#timeb{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+}
+
+.heading-nav {
+    margin-left: 2%;
+    color: #012d56;
+    font-size: 2.0em;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 425px) {
+    .navbar .heading {
+        font-size: 20px;
+    }
+
+    .navbar .logo-img {
+        height: 30px;
+    }
+
+    .mdiv {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding-inline: 40px;
+    }
+    .container {
+        padding-top: 70px;
+    }
+
+    .heading-nav {
+        font-size: 2.5em;
+    }
+
+    .navbar .heading {
+        font-size: 28px;
+    }
+
+    .navbar .logo-img {
+        height: 50px;
+    }
+
+    .mdiv {
+        padding: 30px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .navbar {
+        padding-inline: 60px; 
+    }
+    .container {
+        padding-top: 90px;
+    }
+
+    .heading-nav {
+        font-size: 3em;
+    }
+
+    .navbar .heading {
+        font-size: 32px;
+    }
+
+    .navbar .logo-img {
+        height: 60px;
+    }
+
+    .mdiv {
+        padding: 40px;
+    }
+}

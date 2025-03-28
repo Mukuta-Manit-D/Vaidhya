@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+a {
+    outline: none;
+}
+
+select {
+    outline: none;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+
+
+}
+
+.im {
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin: auto;
+}
+
+.mid-box {
+    width: 100%;
+    height: calc(100vh - 88px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrapper {
+    width: 420px;
+    background: #fff;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: black;
+    border-radius: 10px;
+    padding: 40px 40px;
+}
+
+.wrapper.input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid rgba(27, 22, 22, 0.304);
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.input-box input::placeholder {
+    color: black;
+    font-size: bold;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #FFBE98;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s ease, transform 0.4s ease;
+    margin-bottom: 20px;
+}
+
+.wrapper .btn:hover {
+    background: #F9B572;
+}
+
+.wrapper .btn:active {
+    transform: scale(0.85);
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.wrapper .register-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.top-right-button-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+}
+
+.text-name {
+    padding: 1px;
+
+}
+
+.lflu {
+    margin: 2px;
+    font-size: 15px;
+}
+
+.h4warning {
+    color: red;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+}
+
+.logo-img{
+    height: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFBE98;
+    padding: 20px;
+
+}
+
+.heading{
+    color: black;
+}
+
+.btn:disabled {
+    cursor: not-allowed; 
+    background: #C7C8CC;
+    transform: none ;
+    transition: none;
+}
+
+.btn:disabled:hover {
+    transform: none ;
+    transition: none;
+    background: #C7C8CC;
+}
+
+.btn:disabled:active {
+    transform: none ;
+    transition: none;
+}
