@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/patientReport.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading-nav">ವೈDHया</h1>
+        </div>
+        <a href="{{url_for('doctordashboard')}}"><button data-translate class="dashboard">Dashboard</button></a>
+    </div>
+    <div class="firstdiv">
+        <div class="seconddiv">
+            <div class="statusf">
+                <form method="POST" action="/fetchpatientdetails" onsubmit="fetchdetails();">
+                    <div class="input-box">
+                        <input type="text" required="required" id="patientid" name="patientid" autocomplete="off">
+                        <span data-translate>Patient ID</span>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" required="required" id="key" name="key">
+                        <span data-translate>key</span>
+                    </div>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn" data-translate>Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="statuss">
+                {%if message %}
+                <h1 data-translate>{{ message }}</h1>
+                {% else %}
+                <div class="out">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-out1">
+                </div> 
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="thirddiv">
+            {%if message == "Data Found!" %}
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" data-translate>Field</th>
+                        <th scope="col" data-translate>Information</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row" data-translate>Patient Name</th>
+                        <td data-translate>{{name}}</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row" data-translate>Patient ID</th>
+                        <td data-translate>{{ pid }}</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row" data-translate>Patient Age</th>
+                        <td data-translate>{{ age }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" data-translate>Test 1 (F)</th>
+                        <td data-translate>{{ sfeel }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" data-translate>Test 2 (T)</th>
+                        <td data-translate>{{ stest }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button class="report" id="reportbtn"
+                    onclick="downloadReport('{{name}}', '{{pid}}', '{{age}}', '{{sfeel}}', '{{stest}}', '{{doc_id}}', '{{doc_name}}')"
+                    data-translate>Download
+                    Report</button>
+            </div>
+            {% else %}
+            <div class="out">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-out">
+            </div> 
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/patientReport.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=divice-width,intial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/docnewemail.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>ವೈDHया</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+    </div>
+    
+    <div class="mid-box">
+        <div class="wrapper">
+            <form method="POST" action="/docchooseemail" onsubmit="return docchooseemail();">
+
+                <div class="text-name">
+                    <h2 data-translate>Create Account</h2>
+                </div>
+                <br>
+                <div class="input-box">
+                    <label for="login-username" class="lflu" data-translate>Enter Email</label>
+                    <input type="email" required="required" id="login-username" name="login-username" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Invalid Email">
+                </div>
+                <br>
+                
+                <button type="submit" class="btn" data-translate>Next</button><br>
+
+                {% if message %}
+                    <h4 class="h4warning" data-translate>{{message}}</h4>
+                    <button type="button" class="btn1" onclick="chooselogin()" data-translate>Login</button><br>
+                {% endif %}
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/docnewemail.js') }}"></script>
+</body>
+
+</html>

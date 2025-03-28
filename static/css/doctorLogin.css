@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+a{
+    outline: none;  
+}
+
+select{
+    outline: none;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url(../images/lg_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+
+     
+}
+.im {
+    height: 30px;
+    width: 30px;
+    display: block; 
+    margin: auto; 
+}
+
+.mid-box{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.top-buttons{
+    display: flex;
+
+    width: 100%;
+    height: 15vh;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2%;
+    padding-inline-end: 50px;
+    
+}
+
+
+.wrapper{
+    width: 420px;
+    background: #fff;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color:black;
+    border-radius: 10px;
+    padding: 40px 40px;
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper.input-box{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    
+}
+.input-box{
+    position: relative;
+    margin-bottom: 20px;
+   
+}
+.input-box input{
+    width:100%;
+    padding: 10px;
+    background:#fff;
+    border: 1px solid rgba(27, 22, 22, 0.304);
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+}
+.input-box input::placeholder{
+    color:black;
+    font-size: bold;
+}
+.input-box span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    color: #666e7188;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span
+{
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: .70em;
+    padding: 0 15px;
+    letter-spacing:0.2em;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    background:#fff;
+
+}
+.remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot a{
+    color:black;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    color: #E48F45;
+    font-weight: 900;
+}
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #F5CCA0; 
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition:  0.3s ease ,transform 0.4s ease; 
+}
+
+.wrapper .btn:hover {
+    background:  #E48F45; 
+}
+
+.wrapper .btn:active {
+    transform: scale(0.85); 
+}
+
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.wrapper .register-link{
+    color:black;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration:underline;
+}
+.top-right-button-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    
+}
+
+#myButton {
+    padding: 12px 20px;
+    background-color: #ffe8d0;
+    color: #6B240C;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+#myButton:hover{
+    font-weight:900;
+}
+
+#language-select{
+    padding: 12px;
+    
+    background-color: #ffe8d0;
+    color: #6B240C;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+#language-select:hover{
+    font-weight: 900;
+}
+
+.logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.logo-img{
+    height: 40px;
+}
+
+.h4warning{
+    color: red;
+    font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

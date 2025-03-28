@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/doctordashboard.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading-nav">ವೈDHया</h1>
+        </div>
+        <div class="bk">
+            <button class="logout" onclick="fetchsave()" data-translate>Account</button>
+            <button class="logout" onclick="admin()" data-translate>Delete Account</button>
+            <button class="logout" onclick="logout()" data-translate>Logout</button>
+        </div>
+    </div>
+
+    <h1 class="heading" data-translate>OUR SERVICES</h1>
+
+
+    <div class="container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/patient_report.jpg') }}"
+                alt="">
+            <div class="card-content">
+                <h2 data-translate>
+                    Patient Report
+                </h2>
+                <p data-translate>
+                    Check Status and Generate Patient Report.
+                </p>
+                <a href="{{url_for('patientReport')}}" class="button">
+                    <span data-translate>Patient Report </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/ap-bg.jpg') }}"
+                alt="">
+            <div class="card-content">
+                <h2 data-translate>
+                    Appointments
+                </h2>
+                <p data-translate>
+                    Manage your medical appointments seamlessly.
+                </p data-translate>
+                <a href="{{url_for('docappointment')}}" class="button">
+                    <span data-translate>Check Appointment</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/doctordashboard.js') }}"></script>
+</body>
+
+</html>

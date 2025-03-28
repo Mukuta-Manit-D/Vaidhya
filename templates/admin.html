@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ವೈDHया</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-name">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="heading">ವೈDHया</h1>
+        </div>
+        <button onclick="goBack()" data-translate>Dashboard</button>
+    </div>
+
+    <div class="names-heading">
+        <h1 class="h1" data-translate>Delete Your Account</h1>
+    </div>
+
+    <div class="second">
+        <h3 data-translate>You do not have the direct authority to delete your account. However, you can request account deletion by contacting our administrator at <span> vaidhya.co@gmail.com </span>. Our team will process your request as soon as possible.</h3>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+
+</html>
